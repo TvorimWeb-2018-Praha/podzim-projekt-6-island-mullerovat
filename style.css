@@ -10,7 +10,7 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     background-color: #f5f5f5;
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -20,24 +20,271 @@ body {
 
 /* HLAVICKA */
 
-.titulek {
+.hlavicka {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom:50px;
+    background-image: url(images/island-hlavicka.jpg);
+    background-size: cover;
+    background-position-y: center;
+    min-height: 400px;
+}
+
+.titulek{
     font-family: 'Raleway', serif;
+    color: white;
+    font-size: 42px;
+}
+
+.perex{
+    text-align: center;
+    color: white;
+}
+
+.autor{
+    color: white;
 }
 
 
 /* MENU */
 
+.menu{
+	list-style: none;
+	padding:20px;
+    text-transform: uppercase;
+}
 
+.menu a{
+    display: block;
+    text-align: center;
+    padding: auto;
+    width: 100%;
+    text-decoration: none;
+    color: grey;
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
 
 
 /* OBSAH */
+a{
+    color:grey;
+}
+
+img{
+    width:100%;
+}
+
+h2{
+    padding: 10px 30px 10px 30px;
+}
+
+p{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.popisek-uvod{
+    text-align: center;
+    color: grey;
+}
 
 
+.popisek{
+    text-align: center;
+    color: grey;
+}
 
+.foto{
+    text-align: center;
+    color: grey;
+    font-weight: 600;
+}
 
 /* FOTOGALERIE */
+.galerie{
 
+}
+
+.foto{
+
+}
+
+.popisek-copy{
+    font-weight: 400;
+}
 
 
 
 /* PATICKA */
+.paticka{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: linear-gradient(darkgrey, #e9e9e7)
+}
+
+.paticka p{
+    color: grey;
+    font-weight: 500;
+}
+
+@media(min-width:500px){
+    
+    .menu{
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .menu a{
+        border:none;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        border: 0.5px solid grey;
+        border-inline-start: none;
+        border-inline-end: none;
+        width:100%;
+    }
+
+    .foto-uvod{
+        position: relative;
+    }
+
+    .foto-uvod a{
+        color: white;
+    }
+
+    .popisek-uvod{
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
+        color: white;
+    }
+
+    .galerie{
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .foto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis:50%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .popisek{
+        width: 100%;
+        margin:0;
+        position:absolute;
+        bottom:0px;
+        text-align: center;
+        opacity: 0;
+    }
+
+
+    .foto:hover .popisek{
+        color:white;
+        opacity:1;
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: 0.7s;
+    }
+
+    .foto:hover a{
+        color:white;
+    }
+
+
+    .foto:hover img{
+        display:block;
+        transform: scale(1.1);
+        transition: 0.7s ease-out;
+        width: 100%;
+    }
+
+
+}
+
+@media(min-width:1000px){
+    body{
+        background-color:#f5f5f5;
+    }
+
+    .hlavicka{
+        z-index: -1;
+    }
+
+    .text{
+        background-color: white;
+        box-shadow: 2px 9px 15px 4px #C4C4C4;
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -50px;
+        padding-top:20px;
+    }
+
+    .text p{
+        padding:0;
+    }
+
+    .foto{
+        flex-basis: calc(100%/3);
+    }    
+
+    .prava{
+        padding-left: 180px;
+        padding-right: 40px;
+    }
+
+    .leva{
+        padding-left: 40px;
+        padding-right: 180px;
+    }
+
+    .leva h2{
+        padding: 0px;
+    }
+
+    .prava h2{
+        padding: 0px;
+    }
+
+    .uvod{
+        display: flex;
+        flex-basis: 100%;
+        padding-right: 40px;
+    }
+
+    .menu{
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-basis: 80%;
+    }
+    
+    .menu li{
+        border: 0;
+        border-bottom: 0.5px solid grey;
+        padding-right: 0px;
+    }
+
+    .menu a{
+        text-align: left;
+        padding-top:5px;
+        padding-right: none;
+    }
+}
+
